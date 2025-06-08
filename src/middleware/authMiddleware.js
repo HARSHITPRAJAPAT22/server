@@ -14,8 +14,7 @@ const auth = function (req, res, next) {
     console.error("JWT_SECRET is not defined in environment variables.");
     return res.status(500).json({ message: 'Internal server error' });
   }
-  console.log(token);
-  console.log(process.env.JWT_SECRET);
+  
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
